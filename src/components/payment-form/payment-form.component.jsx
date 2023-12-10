@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
+import { useStripe, useElements, PaymentElement, CardElement } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
 
 import { selectCartTotal } from '../../store/cart/cart.selector';
@@ -19,9 +19,13 @@ const PaymentForm = () => {
                     <h2>
                        Hazte miembro 
                     </h2>
-                    <PaymentElement />
+                    <div>
+                      <CardElement />  
+                    </div>
+                    
+
                     <Button buttonType={BUTTON_TYPE_CLASSES.inverted}>
-                            Suscríbete
+                            Suscríbate
                     </Button>
                 </FormContainer>
             </PaymentFormContainer>
